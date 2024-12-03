@@ -42,8 +42,11 @@
             <td><%=i++%></td>
             <td><%=group.getName()%></td>
             <td>
-                <button class="btn btn-primary btn-sm">Show</button>
-                <button class="btn btn-success btn-sm">Add</button>
+                <form action="/students">
+                    <input type="hidden" name="groupId" value="<%=group.getId()%>">
+                    <button class="btn btn-primary btn-sm">Show</button>
+                    <button class="btn btn-success btn-sm">Add</button>
+                </form>
             </td>
         </tr>
         <%
