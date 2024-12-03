@@ -21,12 +21,12 @@
     List<Module> modules = ModuleRepo.getModules();
 %>
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Courses</h1>
+    <h1 class="text-center mb-4">Modules</h1>
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
         <tr>
             <th>№</th>
-            <th>Course Name</th>
+            <th>Module Name</th>
             <th>Actions</th>
         </tr>
         </thead>
