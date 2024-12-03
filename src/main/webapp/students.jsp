@@ -44,9 +44,6 @@
       <td><%=i++%></td>
       <td><%=student.getName()%></td>
       <td>
-        <form action="">
-          <button class="btn btn-success btn-sm">Add payment</button>
-        </form>
         <form action="/payments">
           <input type="hidden" name="studentId" value="<%=student.getId()%>">
           <button class="btn btn-success btn-sm">My payments</button>

@@ -25,7 +25,7 @@
           <h4>Add Payment</h4>
         </div>
         <div class="card-body">
-          <form action="/payments/add" method="POST">
+          <form action="/add" method="POST">
             <div class="mb-3">
               <label for="amount" class="form-label">Enter Amount</label>
               <input type="hidden" name="studentId" value="<%=studentId%>">

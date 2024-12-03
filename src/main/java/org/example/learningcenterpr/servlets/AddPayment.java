@@ -13,7 +13,7 @@ import java.io.IOException;
 
 import static org.example.learningcenterpr.MyListener.EMF;
 
-@WebServlet("/payments/add")
+@WebServlet("/add")
 public class AddPayment  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,5 +33,6 @@ public class AddPayment  extends HttpServlet {
         payment.setAmount(amount);
         entityManager.persist(payment);
         entityManager.getTransaction().commit();
+        resp.sendRedirect("payment.jsp?studentId="+studentId);
     }
 }
