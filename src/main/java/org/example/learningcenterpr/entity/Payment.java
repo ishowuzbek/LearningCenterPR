@@ -21,4 +21,9 @@ public class Payment {
     private LocalDate paymentDate;
     @ManyToOne
     private Student student;
+
+    public Payment(Integer amount, Student student) {
+        this.amount = amount;
+        this.student = student;
+    }
 }

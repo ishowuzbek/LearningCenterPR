@@ -55,7 +55,8 @@
     %>
     </tbody>
   </table>
-  <form action="">
+  <form action="/payments/add">
+    <input type="hidden" name="studentId" value="<%=studentId%>">
     <button>Add payment</button>
   </form>
 </div>
