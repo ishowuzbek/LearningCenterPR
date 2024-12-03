@@ -30,21 +30,25 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
+
       <%
         int i=1;
         for (Course courS : courses) {
           %>
+      <tr>
       <td><%=i++%></td>
       <td><%=courS.getName()%></td>
       <td>
-        <button class="btn btn-primary btn-sm">Show</button>
-        <button class="btn btn-success btn-sm">Add</button>
+        <form action="/module">
+          <input type="hidden" name="courseId" value="<%=courS.getId()%>">
+          <button class="btn btn-primary btn-sm">Show</button>
+          <button class="btn btn-success btn-sm">Add</button>
+        </form>
       </td>
+      </tr>
       <%
         }
       %>
-    </tr>
     </tbody>
   </table>
 </div>
