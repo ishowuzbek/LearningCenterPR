@@ -1,6 +1,8 @@
 <%@ page import="org.example.learningcenterpr.entity.Module" %>
 <%@ page import="org.example.learningcenterpr.repos.ModuleRepo" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="org.example.learningcenterpr.repos.GroupRepo" %>
+<%@ page import="org.example.learningcenterpr.entity.Groups" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 12/3/2024
@@ -10,48 +12,44 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Module</title>
+    <title>Groups</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <%
-    int courseId = Integer.parseInt(request.getParameter("courseId"));
-    List<Module> modules = ModuleRepo.getModules();
+    int moduleId = Integer.parseInt(request.getParameter("moduleId"));
+    List<Groups> groups = GroupRepo.getGroups();
 %>
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Modules</h1>
+    <h1 class="text-center mb-4">Groups</h1>
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
         <tr>
             <th>№</th>
-            <th>Module Name</th>
+            <th>Group Name</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-            <%
-                int i=1;
-                for (Module module : modules) {
-                    if (module.getCourse().getId()==courseId){
-            %>
-            <tr>
+        <%
+            int i=1;
+            for (Groups group : groups) {
+                if (group.getModule().getId()==moduleId){
+        %>
+        <tr>
             <td><%=i++%></td>
-            <td><%=module.getName()%></td>
+            <td><%=group.getName()%></td>
             <td>
-                <form action="/groups">
-                    <input type="hidden" name="moduleId" value="<%=module.getId()%>">
-                    <button class="btn btn-primary btn-sm">Show</button>
-                    <button class="btn btn-success btn-sm">Add</button>
-                </form>
+                <button class="btn btn-primary btn-sm">Show</button>
+                <button class="btn btn-success btn-sm">Add</button>
             </td>
         </tr>
-            <%
-                    }
+        <%
                 }
-            %>
-
+            }
+        %>
         </tbody>
     </table>
 </div>
