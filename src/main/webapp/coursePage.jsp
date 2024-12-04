@@ -43,7 +43,6 @@
         <form action="/module">
           <input type="hidden" name="courseId" value="<%=courS.getId()%>">
           <button class="btn btn-primary btn-sm">Show</button>
-          <button class="btn btn-success btn-sm">Add</button>
         </form>
       </td>
       </tr>
@@ -52,6 +51,9 @@
       %>
     </tbody>
   </table>
+  <form action="report.jsp">
+    <button class="btn-btn-dark-secondary">Report</button>
+  </form>
 </div>
 </body>
 </html>

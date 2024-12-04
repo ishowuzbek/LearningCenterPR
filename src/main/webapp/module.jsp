@@ -44,7 +44,6 @@
                 <form action="/groups">
                     <input type="hidden" name="moduleId" value="<%=module.getId()%>">
                     <button class="btn btn-primary btn-sm">Show</button>
-                    <button class="btn btn-success btn-sm">Add</button>
                 </form>
             </td>
         </tr>
