@@ -3,6 +3,7 @@ package org.example.learningcenterpr.servlets;
 import jakarta.persistence.EntityManager;
 import org.example.learningcenterpr.entity.Payment;
 import org.example.learningcenterpr.entity.Student;
+import org.example.learningcenterpr.repos.PaymentRepo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,13 +27,9 @@ public class AddPayment  extends HttpServlet {
         int studentId = Integer.parseInt(req.getParameter("studentId"));
         int amount = Integer.parseInt(req.getParameter("amount"));
         EntityManager entityManager = EMF.createEntityManager();
-        entityManager.getTransaction().begin();
         Student student = entityManager.find(Student.class, studentId);
-        Payment payment = new Payment();
-        payment.setStudent(student);
-        payment.setAmount(amount);
-        entityManager.persist(payment);
-        entityManager.getTransaction().commit();
+        PaymentRepo paymentRepo = new PaymentRepo();
+        paymentRepo.save(new Payment(amount,student));
         resp.sendRedirect("payment.jsp?studentId="+studentId);
     }
 }

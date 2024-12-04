@@ -17,7 +17,8 @@
 </head>
 <body>
 <%
-  List<Course> courses = CourseRepo.getCourses();
+  CourseRepo courseRepo = new CourseRepo();
+  List<Course> courses = courseRepo.findAll();
 %>
 <div class="container mt-5">
   <h1 class="text-center mb-4">Courses</h1>

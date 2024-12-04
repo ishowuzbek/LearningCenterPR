@@ -20,7 +20,8 @@
 <body>
 <%
     int moduleId = Integer.parseInt(request.getParameter("moduleId"));
-    List<Groups> groups = GroupRepo.getGroups();
+    GroupRepo groupRepo= new GroupRepo();
+    List<Groups> groups = groupRepo.findAll();
 %>
 <div class="container mt-5">
     <h1 class="text-center mb-4">Groups</h1>

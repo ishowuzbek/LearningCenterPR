@@ -24,7 +24,8 @@
 <body>
 <%
   int studentId = Integer.parseInt(request.getParameter("studentId"));
-  List<Payment> payments = PaymentRepo.getPayments();
+  PaymentRepo paymentRepo = new PaymentRepo();
+  List<Payment> payments = paymentRepo.findAll();
 %>
 <div class="container mt-5">
   <h1 class="text-center mb-4">Payments</h1>

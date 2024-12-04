@@ -18,7 +18,8 @@
 <body>
 <%
     int courseId = Integer.parseInt(request.getParameter("courseId"));
-    List<Module> modules = ModuleRepo.getModules();
+    ModuleRepo moduleRepo = new ModuleRepo();
+    List<Module> modules =moduleRepo.findAll();
 %>
 <div class="container mt-5">
     <h1 class="text-center mb-4">Modules</h1>

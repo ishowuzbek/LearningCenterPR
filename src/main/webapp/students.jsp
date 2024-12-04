@@ -22,7 +22,8 @@
 <body>
 <%
   int groupId = Integer.parseInt(request.getParameter("groupId"));
-  List<Student> students = StudentRepo.getStudents();
+  StudentRepo studentRepo = new StudentRepo();
+  List<Student> students = studentRepo.findAll();
 %>
 <div class="container mt-5">
   <h1 class="text-center mb-4">Students</h1>
